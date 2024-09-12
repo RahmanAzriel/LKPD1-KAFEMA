@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .card {
+        border: 1px solid black;
+        padding: 10px;
+        margin: 10px;
+        width: 280px;
+        height: 100px;
+        flex-wrap: wrap;
+    }
+    .row-start {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .row-end {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .wrapper {
+        display: block;
+        margin: auto;
+        width: 30%;
+    }
+    .baden {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="row-start">
+            <div class="card">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque expedita debitis ad soluta corporis cumque doloribus laudantium hic, impedit ducimus sapiente quibusdam cum commodi suscipit officiis dignissimos reiciendis libero iusto.
+            </div>
+        </div>
+        <div class="row-end">
+            <div class="card">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque expedita debitis ad soluta corporis cumque doloribus laudantium hic, impedit ducimus sapiente quibusdam cum commodi suscipit officiis dignissimos reiciendis libero iusto.
+            </div>
+        </div>
+        <div class="row-start">
+            <div class="card">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque expedita debitis ad soluta corporis cumque doloribus laudantium hic, impedit ducimus sapiente quibusdam cum commodi suscipit officiis dignissimos reiciendis libero iusto.
+            </div>
+        </div>
+        <div class="baden">
+            <input type="button" value="Submit">
+        </div>
+    </div>
+</body>
+</html>

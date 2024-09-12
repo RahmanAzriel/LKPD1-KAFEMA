@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Form Example</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .kelas1 {
+            display: block;
+        }
+        .kelas2, .kelas3 {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-md mx-auto mt-10 bg-white p-6 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold text-center mb-6">Pilih Jenjang Pendidikan</h1>
+        <form action="">
+            <div class="mb-4">
+                <label for="" class="block text-gray-700 font-semibold mb-2">Jenjang Pendidikan :</label>
+                <select name="" id="" class="w-full p-3 border border-gray-300 rounded-lg" onchange="GantiBiji(this)">
+                    <option value="SD">SD</option>
+                    <option value="SMP">SMP</option>
+                    <option value="SMA">SMA</option>
+                </select>
+            </div>
+            
+            <div class="mb-4">
+                <label for="" class="block text-gray-700 font-semibold mb-2">Kelas :</label>
+                <select name="" class="kelas1 w-full p-3 border border-gray-300 rounded-lg" id="Pilihan_1">
+                    <option value="1">Kelas 1</option>
+                    <option value="2">Kelas 2</option>
+                    <option value="3">Kelas 3</option>
+                    <option value="4">Kelas 4</option>
+                    <option value="5">Kelas 5</option>
+                    <option value="6">Kelas 6</option>
+                </select>
+                <select name="" class="kelas2 w-full p-3 border border-gray-300 rounded-lg" id="Pilihan_2">
+                    <option value="">Kelas 7</option>
+                    <option value="">Kelas 8</option>
+                    <option value="">Kelas 9</option>
+                </select>
+                <select name="" class="kelas3 w-full p-3 border border-gray-300 rounded-lg" id="Pilihan_3">
+                    <option value="">Kelas 10</option>
+                    <option value="">Kelas 11</option>
+                    <option value="">Kelas 12</option>
+                </select>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+    function GantiBiji(e){
+        if(e.value == "SD"){
+            document.getElementById("Pilihan_1").style.display = "block";
+            document.getElementById("Pilihan_2").style.display = "none";
+            document.getElementById("Pilihan_3").style.display = "none";
+        }else if(e.value == "SMP"){
+            document.getElementById("Pilihan_1").style.display = "none";
+            document.getElementById("Pilihan_2").style.display = "block";
+            document.getElementById("Pilihan_3").style.display = "none";  
+        } else {
+            document.getElementById("Pilihan_1").style.display = "none";
+            document.getElementById("Pilihan_2").style.display = "none";
+            document.getElementById("Pilihan_3").style.display = "block";  
+        }
+    }
+    </script>
+</body>
+</html>
