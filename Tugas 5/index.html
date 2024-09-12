@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HAI</h1>
+    <button onclick="timer()">HITUNG</button>
+    <div id="safeTimer">
+        <h2>Safe Timer</h2>
+        <p id="safeTimerDisplay">00:10</p>
+        </div>
+</body>
+</html>
+<script>
+    function timer(){
+        var sec = 10;
+        var timer = setInterval(function(){
+            document.getElementById('safeTimerDisplay').innerHTML="00:"+ ( sec < 10 ? "0" : "" ) + sec;
+            sec--;
+            if (sec < 0) {
+                clearInterval(timer);
+                alert ('Waktu Telah Habis');
+            }
+        }, 1000);
+    }
+    ;
+        </script>

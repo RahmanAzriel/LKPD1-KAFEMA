@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Default styles for the image */
+        #gambarweb img {
+            width: 300px;
+            height: 300px;
+            border: 5px solid black;
+            transition: all 0.3s ease;
+        }
+        /* Shape-specific styles */
+        .kotak {
+            border-radius: 0;
+            clip-path: none;
+        }
+        .bulet {
+            border-radius: 50%;
+            clip-path: none;
+        }
+        .segitiga {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            border-width: 5px;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="gambarweb">
+        <img src="https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989_640.jpg" alt="" id="image">
+    </div>
+    <div id="pengubah">
+        <select name="" id="Gambar" class="form-select w-25 m-1">
+            <option value="https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989_640.jpg">Gambar 1</option>
+            <option value="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg">Gambar 2</option>
+            <option value="https://cdn.pixabay.com/photo/2015/03/26/09/54/pizza-690682_640.jpg">Gambar 3</option>
+        </select>
+        <select name="" id="Bentuk" class="form-select w-25 m-1">
+            <option value="kotak">Kotak</option>
+            <option value="bulet">Bulet</option>
+            <option value="segitiga">Segitiga</option>
+        </select>
+        <select name="" id="Warna-Border" class="form-select w-25 m-1">
+            <option value="red">Merah</option>
+            <option value="black">Hitam</option>
+            <option value="blue">Biru</option>
+        </select>
+        <button id="button" class="btn btn-primary m-1">Kirim</button>
+    </div>
+
+    <script>
+        const image = document.getElementById("image");
+        const gambarSelect = document.getElementById("Gambar");
+        const bentukSelect = document.getElementById("Bentuk");
+        const warnaBorderSelect = document.getElementById("Warna-Border");
+        const button = document.getElementById("button");
+
+        button.addEventListener("click", () => {
+            // Mengubah sumber gambar
+            image.src = gambarSelect.value;
+
+            // Mengubah warna border
+            image.style.borderColor = warnaBorderSelect.value;
+
+            // Menghapus kelas bentuk yang ada
+            image.classList.remove("kotak", "bulet", "segitiga");
+
+            // Menambahkan kelas bentuk yang baru
+            image.classList.add(bentukSelect.value.toLowerCase());
+
+            if (bentukSelect.value.toLowerCase() === "segitiga") {
+                image.style.clipPath = "polygon(50% 0%, 0% 100%, 100% 100%)";
+                image.style.border = `5px solid ${warnaBorderSelect.value}`;
+            } else {
+                image.style.clipPath = "none";
+                image.style.border = `5px solid ${warnaBorderSelect.value}`;
+            }
+        });
+    </script>
+</body>
+</html>
